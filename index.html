@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avizier Digital Bloc</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .announcement {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-left: 10px solid #0077cc;
+    }
+    .announcement h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+    .announcement p {
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+    .pdf-section iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Avizier Digital - Bloc A1</h1>
+
+    <div class="announcement">
+      <h2>Anunț important</h2>
+      <p>În data de 25 iulie se va efectua deratizarea scării. Vă rugăm să evitați zona în intervalul 10:00 - 14:00.</p>
+    </div>
+
+    <div class="announcement">
+      <h2>Întrerupere apă</h2>
+      <p>Apă Nova va întrerupe furnizarea apei potabile joi, 26 iulie între orele 08:00 și 16:00 pentru lucrări de întreținere.</p>
+    </div>
+
+    <div class="announcement">
+      <h2>Program încasări</h2>
+      <p>Miercuri, 27 Iulie, orele 19:00-20:00</p>
+    </div>
+
+    <div class="pdf-section">
+      <h2>Lista de plată</h2>
+      <iframe src="lista.pdf"></iframe>
+    </div>
+  </div>
+</body>
+</html>
