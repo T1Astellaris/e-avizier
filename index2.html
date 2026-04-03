@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avizier Bloc - Apartamente</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .announcement {
+            background: #f8f9ff;
+            border-left: 5px solid #667eea;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        .announcement h3 {
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .announcement p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .date {
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 8px;
+        }
+        
+        .important {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+        }
+        
+        .important h3 {
+            color: #856404;
+        }
+        
+        .contact-info {
+            background: #e8f4f8;
+            border-left-color: #17a2b8;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .contact-info h3 {
+            color: #0c5460;
+        }
+        
+        .contact-info p {
+            color: #0c5460;
+            margin-bottom: 10px;
+        }
+        
+        .residents-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .apartment {
+            background: #f8f9ff;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+        .apartment strong {
+            color: #667eea;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .residents-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Avizier Bloc</h1>
+            <p>Cartierul Floreasca, Strada Principală Nr. 42</p>
+        </header>
+        
+        <div class="content">
+            <!-- Anunțuri importante -->
+            <section class="section">
+                <h2>⚠️ Anunțuri Importante</h2>
+                
+                <div class="announcement important">
+                    <h3>Lucrări de Reparație la Acoperiș</h3>
+                    <p>Se vor desfășura lucrări de reparație și impermeabilizare a acoperișului. Se va opri apa în perioada 10-15 februarie, între orele 09:00-16:00.</p>
+                    <p class="date">02 februarie 2026</p>
+                </div>
+                
+                <div class="announcement important">
+                    <h3>Întreținere Ascensor</h3>
+                    <p>Ascensorul va fi închis pentru verificare tehnică pe 20 februarie. Vă rugăm să planificați deplasările accordingly.</p>
+                    <p class="date">28 ianuarie 2026</p>
+                </div>
+            </section>
+            
+            <!-- Noutăți Bloc -->
+            <section class="section">
+                <h2>🔔 Noutăți Bloc</h2>
+                
+                <div class="announcement">
+                    <h3>Deratizare și Dezinsecție</h3>
+                    <p>Se vor efectua lucrări de deratizare în toată clădirea pe 8 martie. Vă rugăm să asigurați accesul la apartament.</p>
+                    <p class="date">15 februarie 2026</p>
+                </div>
+                
+                <div class="announcement">
+                    <h3>Servicii Noi - Curățenie în Comun</h3>
+                    <p>Am angajat o nouă companie de curățenie. Scări și hol vor fi curățate zilnic, în mod gratuit.</p>
+                    <p class="date">10 februarie 2026</p>
+                </div>
+                
+                <div class="announcement">
+                    <h3>Plată Cheltuieli Comune</h3>
+                    <p>Vi se aduc la cunoștință că factura pentru perioada februarie-martie este disponibilă. Termenul de plată este 25 martie.</p>
+                    <p class="date">01 februarie 2026</p>
+                </div>
+            </section>
+            
+            <!-- Informații de Contact -->
+            <section class="section">
+                <h2>📞 Informații Contact</h2>
+                
+                <div class="contact-info">
+                    <h3>Administrator Bloc</h3>
+                    <p><strong>Nume:</strong> Ion Popescu</p>
+                    <p><strong>Telefon:</strong> 0721 234 567</p>
+                    <p><strong>Email:</strong> admin@blocustraticului.ro</p>
+                    <p><strong>Birou:</strong> Parter, Ap. 1 (Program: Luni-Vineri, 10-17)</p>
+                </div>
+            </section>
+            
+            <!-- Lista Apartamente (opțional) -->
+            <section class="section">
+                <h2>🏠 Apartamente Bloc</h2>
+                <div class="residents-list">
+                    <div class="apartment">
+                        <strong>Ap. 1 - Parter</strong><br>
+                        Administrator Bloc
+                    </div>
+                    <div class="apartment">
+                        <strong>Ap. 2 - Parter</strong><br>
+                        Familia Ionescu
+                    </div>
+                    <div class="apartment">
+                        <strong>Ap. 3 - Etaj 1</strong><br>
+                        Doamna Maria Ștefan
+                    </div>
+                    <div class="apartment">
+                        <strong>Ap. 4 - Etaj 1</strong><br>
+                        Familia Gheorghe
+                    </div>
+                    <div class="apartment">
+                        <strong>Ap. 5 - Etaj 2</strong><br>
+                        Ing. Alin Mihai
+                    </div>
+                    <div class="apartment">
+                        <strong>Ap. 6 - Etaj 2</strong><br>
+                        Familia Kovacs
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Reguli Bloc -->
+            <section class="section">
+                <h2>📏 Reguli Bloc</h2>
+                <ul style="margin-left: 20px; color: #666; line-height: 1.8;">
+                    <li>Zgomotul trebuie menținut la minimum după ora 22:00</li>
+                    <li>Folosiți containerele de deșeuri desemnate pentru reciclare</li>
+                    <li>Nu blocați scările și holurile cu obiecte</li>
+                    <li>Curățața după animale de companie pe scări</li>
+                    <li>Comunicați administrator orice defecțiuni la instalații comune</li>
+                </ul>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 Avizier Bloc Electroni. Ultima actualizare: 3 februarie 2026</p>
+        </footer>
+    </div>
+</body>
+</html>
