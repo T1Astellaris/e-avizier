@@ -1,282 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avizier Bloc - Apartamente</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #f5f5f5;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-        
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1.1em;
-            opacity: 0.95;
-        }
-        
-        .content {
-            padding: 40px;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .section h2 {
-            color: #2c3e50;
-            border-bottom: 3px solid #34495e;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-        
-        .announcement {
-            background: #ecf0f1;
-            border-left: 5px solid #34495e;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
-        
-        .announcement h3 {
-            color: #2c3e50;
-            margin-bottom: 8px;
-        }
-        
-        .announcement p {
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        .date {
-            color: #7f8c8d;
-            font-size: 0.9em;
-            margin-top: 8px;
-        }
-        
-        .important {
-            background: #fef5e7;
-            border-left-color: #d68910;
-        }
-        
-        .important h3 {
-            color: #7d3c0a;
-        }
-        
-        .important p {
-            color: #333;
-        }
-        
-        .contact-info {
-            background: #d6eaf8;
-            border-left-color: #2874a6;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        
-        .contact-info h3 {
-            color: #1b4f72;
-        }
-        
-        .contact-info p {
-            color: #1b4f72;
-            margin-bottom: 10px;
-        }
-        
-        .contracts-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .contract {
-            background: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #bdc3c7;
-        }
-        
-        .contract strong {
-            color: #2c3e50;
-        }
-        
-        .contract {
-            color: #34495e;
-        }
-        
-        footer {
-            background: #ecf0f1;
-            padding: 20px;
-            text-align: center;
-            color: #555;
-            border-top: 1px solid #bdc3c7;
-        }
-        
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-            
-            .contracts-list {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Avizierul digital Stellaris T1A: anunțuri, liste de întreținere, documente și contact.">
+<meta name="theme-color" content="#163b46"><title>Stellaris T1A · Avizier digital</title>
+<style>
+:root{--ink:#173c46;--muted:#617278;--line:#dce5e4;--paper:#f4f7f5;--green:#d4edb7}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,sans-serif}a{color:inherit}button,select{font:inherit}a,button,select{touch-action:manipulation}a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #b16b16;outline-offset:5px}.wrap{max-width:1160px;margin:auto;padding:0 28px}.skip{position:absolute;top:-80px;background:white;padding:10px;z-index:10}.skip:focus{top:0}header{background:#fff;border-bottom:1px solid var(--line)}.bar{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:92px}.brand{text-decoration:none;display:flex;gap:13px;align-items:center}.mark{background:var(--ink);color:var(--green);border-radius:14px;width:44px;height:44px;display:grid;place-items:center;font-size:27px}.brand strong{display:block;letter-spacing:2px;font-size:18px}.brand small{display:block;color:var(--muted);font-size:12px}nav{display:flex;gap:25px;flex-wrap:wrap}nav a{text-decoration:none;font-size:14px;font-weight:600}nav a:hover{text-decoration:underline}.hero{padding:65px 0 44px}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:750;color:var(--muted)}h1{font-size:clamp(38px,5.5vw,65px);line-height:1.08;letter-spacing:-2.5px;max-width:740px;margin:18px 0 22px}h1 span{color:#597d62}.intro{max-width:600px;color:var(--muted);font-size:18px}.hero-bottom{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:11px 19px;border:1px solid var(--line);border-radius:9px;background:white;font-size:14px;font-weight:650;cursor:pointer}.btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}.btn:hover{filter:brightness(.94)}.stamp{font-size:12px;color:var(--muted)}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 52px}.quick a{text-decoration:none;padding:21px 24px;background:#fff;border:1px solid var(--line);border-radius:13px;display:flex;align-items:center;justify-content:space-between;font-weight:650}.quick a:hover{border-color:#6a8b75}.quick span{color:var(--muted);font-size:20px}section{margin-bottom:52px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px}h2{font-size:27px;letter-spacing:-.8px;line-height:1.2;margin:0}h3{line-height:1.4;margin:0 0 10px;font-size:19px}p{margin:0 0 15px}.label{font-size:11px;letter-spacing:1px;text-transform:uppercase;border-radius:5px;background:#e7eee8;padding:5px 9px;display:inline-block;font-weight:700}.notice{display:grid;grid-template-columns:130px 1fr;gap:24px;padding:29px;background:white;border:1px solid var(--line);border-radius:15px}.notice time{font-size:13px;color:var(--muted)}.notice p{color:var(--muted);margin:0}.notice .label{background:#fff0cd;margin-bottom:10px}.archive{margin-top:15px;border:1px solid var(--line);border-radius:12px;padding:18px 24px;background:#fff}summary{cursor:pointer;font-weight:600}.archive article{padding:18px 0;border-top:1px solid var(--line);margin-top:15px}.archive p{color:var(--muted);margin:0}.pdf-card{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden}.pdf-toolbar{padding:23px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.pdf-toolbar label{font-size:13px;color:var(--muted);display:block}select{border:1px solid var(--line);padding:8px 12px;border-radius:7px;background:#fff;color:var(--ink);max-width:100%}.actions{display:flex;gap:9px;flex-wrap:wrap}.viewer{background:#e9efec;min-height:330px;display:grid;place-items:center;padding:26px;border-top:1px solid var(--line)}.viewer.ready{padding:0}.viewer iframe{width:100%;height:750px;border:0;background:#fff}.empty{text-align:center;max-width:420px;padding:28px}.file-icon{font-size:13px;letter-spacing:1px;border:2px solid #9bafa7;border-radius:8px;width:55px;height:65px;margin:0 auto 20px;display:grid;place-items:center;color:#668076;font-weight:750}.empty p,.sub{color:var(--muted);font-size:14px}.pdf-note{padding:13px 23px;color:var(--muted);font-size:12px;margin:0}.documents{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.doc{background:white;border:1px solid var(--line);border-radius:14px;padding:25px;display:flex;flex-direction:column;align-items:start}.doc .number{color:#7b9688;font-size:13px;margin-bottom:24px}.doc p{font-size:14px;color:var(--muted);flex:1}.soon{font-size:12px;color:var(--muted);padding:9px 0}.contact{background:var(--ink);color:white;border-radius:18px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:40px}.contact .eyebrow{color:#bfd4cc}.contact h2{font-size:31px;margin:12px 0 18px}.contact p{color:#cbdcd8}.contact a{overflow-wrap:anywhere}.contact .btn{background:var(--green);color:var(--ink);border:0}.contact-info{border-left:1px solid #48646b;padding-left:35px}.contact-info strong{font-size:13px;display:block;margin-bottom:6px}.contact-info p{font-size:14px}footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:20px}[hidden]{display:none!important}@media(max-width:700px){.wrap{padding:0 18px}.bar{align-items:start;flex-direction:column;gap:16px;padding-top:20px;padding-bottom:20px}nav{gap:18px}.hero{padding-top:38px}h1{letter-spacing:-1.5px}.hero-bottom{align-items:start;flex-direction:column}.quick{grid-template-columns:1fr;gap:8px;margin-bottom:38px}.quick a{padding:16px 20px}.notice{grid-template-columns:1fr;gap:14px;padding:22px}.documents{grid-template-columns:1fr}.doc .number{margin-bottom:14px}.contact{grid-template-columns:1fr;padding:26px;gap:22px}.contact-info{border-left:0;border-top:1px solid #48646b;padding:22px 0 0}.viewer iframe{height:65vh;min-height:400px}.section-head{align-items:start;flex-direction:column;gap:10px}.footer-row{flex-direction:column;gap:4px}section{margin-bottom:38px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>📋 Avizier Bloc</h1>
-        </header>
-        
-        <div class="content">
-            <!-- Anunțuri importante -->
-            <section class="section">
-                <h2>⚠️ Anunțuri Importante</h2>
-                
-                <div class="announcement important">
-                    <h3>Completare carte imobil</h3>
-                    <p>În vederea completării cărții imobilului, conform prevederilor din Legea nr. 196/2018, vă adresez rugămintea de a completa prezenta solicitare, semna și de a o transmite la adresa de e-mail T1Astellaris@gmail.com</p>
-                    <p class="date">20 martie 2026</p>
-                </div>
-                
-                <div class="announcement important">
-                    <h3>Întreținere Ascensor</h3>
-                    <p>Ascensorul va fi închis pentru verificare tehnică pe 20 februarie. Vă rugăm să planificați deplasările accordingly.</p>
-                    <p class="date">28 ianuarie 2026</p>
-                </div>
-            </section>
-            
-            <!-- Noutăți Bloc -->
-            <section class="section">
-                <h2>🔔 Noutăți Bloc</h2>
-                
-                <div class="announcement">
-                    <h3>Deratizare și Dezinsecție</h3>
-                    <p>Se vor efectua lucrări de deratizare în toată clădirea pe 8 martie. Vă rugăm să asigurați accesul la apartament.</p>
-                    <p class="date">15 februarie 2026</p>
-                </div>
-                
-                <div class="announcement">
-                    <h3>Servicii Noi - Curățenie în Comun</h3>
-                    <p>Am angajat o nouă companie de curățenie. Scări și hol vor fi curățate zilnic, în mod gratuit.</p>
-                    <p class="date">10 februarie 2026</p>
-                </div>
-                
-                <div class="announcement">
-                    <h3>Plată Cheltuieli Comune</h3>
-                    <p>Vi se aduc la cunoștință că factura pentru perioada februarie-martie este disponibilă. Termenul de plată este 25 martie.</p>
-                    <p class="date">01 februarie 2026</p>
-                </div>
-            </section>
-            
-            <!-- Informații de Contact -->
-            <section class="section">
-                <h2>📞 Informații Contact</h2>
-                
-                <div class="contact-info">
-                    <h3>Administrator Bloc</h3>
-                    <p><strong>Nume:</strong> Ion Popescu</p>
-                    <p><strong>Telefon:</strong> 0721 234 567</p>
-                    <p><strong>Email:</strong> admin@blocustraticului.ro</p>
-                    <p><strong>Birou:</strong> Parter, Ap. 1 (Program: Luni-Vineri, 10-17)</p>
-                </div>
-            </section>
-            
-            <!-- Lista contracte -->
-            <section class="section">
-                <h2>🏠 Contracte</h2>
-                <div class="contracts-list">
-                    <div class="contract">
-                        <strong>Wise Facility </strong><br>
-                        administrare<br>
-						- semnat 01.03.2026 -
-                    </div>
-                    <div class="contract">
-                        <strong>SC URBAN SA </strong><br>
-						salubritate<br>
-                        - în curs de semnare -
-                    </div>
-                    <div class="contract">
-                        <strong>SANSYS ELECTRONIC SRL</strong><br>
-                           mentenanță sistem anti incendiu<br>
-						
-						- în curs de semnare -
-                    </div>
-                    <div class="contract">
-                        <strong>S.C. OTIS LIFT S.R.L.</strong><br>
-                        - semnat 01.04.2026 - 
-                    </div>
-                    <div class="contract">
-                        <strong>Peisajistică</strong><br>
-                        - în curs de prospectare - 
-                    </div>
-                    <div class="contract">
-                        <strong>Energie electrică - Hidroelectrica</strong><br>
-                        - în curs de semnare - 
-                    </div>
-					<div class="contract">
-                        <strong>gaze?</strong><br>
-                        - în curs de semnare - 
-                    </div>
-					<div class="contract">
-                        <strong>XiSoft Servicii SRL</strong><br>
-                        plata alternativă e-bloc<br>
-						- semnat 17.03.2026 -
-                    </div>
-					<div class="contract">
-                        <strong>Sistem supraveghere video</strong><br>
-                        - în curs de prospectare - 
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Reguli Bloc -->
-            <section class="section">
-                <h2>📏 Reguli Bloc</h2>
-                <ul style="margin-left: 20px; color: #333; line-height: 1.8;">
-                    <li>Zgomotul trebuie menținut la minimum după ora 22:00</li>
-                    <li>Folosiți containerele de deșeuri desemnate pentru reciclare</li>
-                    <li>Nu blocați scările și holurile cu obiecte</li>
-                    <li>Curățața după animale de companie pe scări</li>
-                    <li>Comunicați administrator orice defecțiuni la instalații comune</li>
-                </ul>
-            </section>
-        </div>
-        
-        <footer>
-            <p>&copy; 2026 Avizier Bloc Electroni. Ultima actualizare: 3 februarie 2026</p>
-        </footer>
-    </div>
-</body>
-</html>
+<a class="skip" href="#continut">Sari la conținut</a>
+<header><div class="wrap bar"><a class="brand" href="#" aria-label="Stellaris, prima pagină"><span class="mark" aria-hidden="true">✳</span><span><strong>STELLARIS</strong><small>T1A · Avizier digital</small></span></a><nav aria-label="Navigare principală"><a href="#anunturi">Anunțuri</a><a href="#intretinere">Întreținere</a><a href="#documente">Documente</a><a href="#contact">Contact</a></nav></div></header>
+<main class="wrap" id="continut">
+<div class="hero"><div class="eyebrow">Asociația Stellaris T1A</div><h1>Tot ce ține de bloc.<br><span>La un loc.</span></h1><p class="intro">Anunțurile comunității, listele lunare de întreținere și documentele utile. Simplu, de oriunde.</p><div class="hero-bottom"><a class="btn primary" href="#intretinere">Vezi întreținerea <span aria-hidden="true">&nbsp;↗</span></a><span class="stamp">Site actualizat · 22 octombrie 2026</span></div></div>
+<div class="quick"><a href="#anunturi">Anunțurile asociației <span aria-hidden="true">↗</span></a><a href="#documente">Formulare și documente <span aria-hidden="true">↗</span></a><a href="#contact">Ia legătura cu noi <span aria-hidden="true">↗</span></a></div>
+<section id="anunturi" aria-labelledby="anunturi-title"><div class="section-head"><h2 id="anunturi-title">Anunțuri importante</h2><span class="eyebrow">Viața comunității</span></div><div id="announcements"></div>
+<details class="archive"><summary>Arhiva anunțurilor</summary><p class="sub">Anunțuri preluate din versiunea anterioară a avizierului. Datele și informațiile sunt istorice.</p><article><h3>Completare carte imobil</h3><time datetime="2026-03-20">20 martie 2026</time><p>Pentru completarea cărții imobilului, completați și semnați solicitarea și transmiteți-o la <a href="mailto:T1Astellaris@gmail.com">T1Astellaris@gmail.com</a>.</p></article><article><h3>Verificare ascensor</h3><time datetime="2026-01-28">28 ianuarie 2026</time><p>Anunț privind verificarea tehnică programată pentru 20 februarie 2026.</p></article><article><h3>Alte informări din februarie 2026</h3><p>Avizierul anterior conținea informări despre deratizare și dezinsecție, servicii de curățenie și plata cheltuielilor comune. Pentru informații actuale, contactați asociația.</p></article></details></section>
+<section id="intretinere" aria-labelledby="pdf-title"><div class="section-head"><h2 id="pdf-title">Întreținere lunară</h2><span class="label">Documente anonimizate</span></div><p class="sub">Consultă lista direct aici sau deschide documentul într-o fereastră separată.</p><div class="pdf-card"><div class="pdf-toolbar"><div><label for="month">Luna afișată</label><select id="month" disabled><option>Nicio listă publicată încă</option></select></div><div class="actions" id="pdf-actions" hidden><a class="btn" id="pdf-open" target="_blank" rel="noopener noreferrer">Deschide PDF ↗</a><a class="btn primary" id="pdf-download" target="_blank" rel="noopener noreferrer">Descarcă PDF ↓</a></div></div><div class="viewer" id="viewer"><div class="empty"><div class="file-icon" aria-hidden="true">PDF</div><h3>Lista lunară va apărea aici</h3><p>Momentan nu este publicat niciun document. După publicare, vei putea consulta PDF-ul direct în această pagină.</p></div></div><p class="pdf-note">Pe telefon, dacă previzualizarea nu se încarcă, folosește „Deschide PDF”.</p></div><noscript><p>Activează JavaScript pentru selectarea și vizualizarea documentelor.</p></noscript></section>
+<section id="documente" aria-labelledby="docs-title"><div class="section-head"><h2 id="docs-title">Documente la îndemână</h2><span class="eyebrow">Formulare utile</span></div><p class="sub">Formularele standard ale asociației, disponibile pentru descărcare.</p><div class="documents" id="documents"></div></section>
+<section id="contact" aria-labelledby="contact-title"><div class="contact"><div><div class="eyebrow">Suntem în legătură</div><h2 id="contact-title">Ai o întrebare<br>sau o sesizare?</h2><p>Scrie asociației și include detaliile necesare pentru a putea primi un răspuns.</p><a class="btn" href="mailto:T1Astellaris@gmail.com">Trimite un e-mail ↗</a></div><div class="contact-info"><strong>E-mail asociație</strong><p><a href="mailto:T1Astellaris@gmail.com">T1Astellaris@gmail.com</a></p><strong>Pentru o sesizare</strong><p>Menționează scara, etajul și locul problemei. Dacă este util, atașează o fotografie.</p><strong>Program și telefon</strong><p>Vor fi afișate după confirmarea datelor de contact.</p></div></div></section>
+<details class="archive"><summary>Furnizori și reguli de conviețuire</summary><p class="sub">Furnizori menționați în avizierul anterior; situația contractuală curentă se confirmă la asociație.</p><p>Wise Facility · SC URBAN SA · SANSYS ELECTRONIC SRL · OTIS LIFT · Hidroelectrica · XiSoft Servicii SRL (e-bloc).</p><ul><li>Păstrați libere scările, holurile și căile de acces.</li><li>Folosiți spațiile de colectare a deșeurilor și păstrați curățenia.</li><li>Strângeți după animalele de companie în spațiile comune.</li><li>Respectați liniștea vecinilor și semnalați defecțiunile instalațiilor comune.</li></ul></details>
+</main><footer><div class="wrap footer-row"><span>© 2026 Stellaris T1A · Avizier digital</span><span>Informații pentru comunitatea noastră.</span></div></footer>
+<script>
+// CONFIGURAȚIE: modificați aici anunțurile și linkurile. Instrucțiuni în README.md.
+const SITE = {
+  announcements: [],
+  documents: [
+    {title:"Carte de imobil", description:"Formular pentru actualizarea datelor din cartea imobilului.", url:""},
+    {title:"Cereri și declarații", description:"Formulare standard pentru solicitări către asociație.", url:""},
+    {title:"Documente ale asociației", description:"Alte documente utile pentru proprietari și locatari.", url:""}
+  ],
+  maintenance: [
+    // Cel mai recent document se pune primul:
+    // {label:"Septembrie 2026", url:"https://drive.google.com/file/d/ID_FISIER/view"}
+  ]
+};
+const safeURL = value => {try {const u=new URL(value);return u.protocol==="https:"?u:null;}catch{return null;}};
+function fileLinks(value){
+ const u=safeURL(value); if(!u)return null;
+ const match=u.hostname==="drive.google.com" && (u.pathname.match(/^\/file\/d\/([a-zA-Z0-9_-]+)/) || (u.searchParams.get("id") && [null,u.searchParams.get("id")]));
+ if(match && /^[a-zA-Z0-9_-]+$/.test(match[1])){const id=encodeURIComponent(match[1]);return {preview:"https://drive.google.com/file/d/"+id+"/preview",open:"https://drive.google.com/file/d/"+id+"/view",download:"https://drive.google.com/uc?export=download&id="+id};}
+ return {preview:u.href,open:u.href,download:u.href};
+}
+const announcementRoot=document.getElementById("announcements");
+if(!SITE.announcements.length){const box=document.createElement("div");box.className="notice";const tag=document.createElement("span");tag.className="label";tag.textContent="La zi";const body=document.createElement("div");const title=document.createElement("h3");title.textContent="Niciun anunț nou publicat";const p=document.createElement("p");p.textContent="Informările noi ale asociației vor fi afișate aici. Anunțurile anterioare sunt disponibile în arhivă.";body.append(title,p);box.append(tag,body);announcementRoot.append(box);}
+SITE.announcements.forEach(item=>{const box=document.createElement("article");box.className="notice";const meta=document.createElement("div");const label=document.createElement("span");label.className="label";label.textContent=item.important?"Important":"Informare";const date=document.createElement("time");date.textContent=item.date;meta.append(label,document.createElement("br"),date);const body=document.createElement("div");const title=document.createElement("h3");title.textContent=item.title;const p=document.createElement("p");p.textContent=item.text;body.append(title,p);box.append(meta,body);announcementRoot.append(box);});
+SITE.documents.forEach((item,i)=>{const card=document.createElement("article");card.className="doc";const num=document.createElement("span");num.className="number";num.textContent="0"+(i+1)+" / DOCUMENT";const title=document.createElement("h3");title.textContent=item.title;const p=document.createElement("p");p.textContent=item.description;card.append(num,title,p);const url=safeURL(item.url);if(url){const a=document.createElement("a");a.className="btn";a.href=url.href;a.target="_blank";a.rel="noopener noreferrer";a.textContent="Deschide documentul ↗";card.append(a);}else{const span=document.createElement("span");span.className="soon";span.textContent="În curs de publicare";card.append(span);}document.getElementById("documents").append(card);});
+const lists=SITE.maintenance.map(item=>({...item,links:fileLinks(item.url)})).filter(item=>item.links);
+const select=document.getElementById("month");
+function showPDF(){const item=lists[Number(select.value)];if(!item)return;const frame=document.createElement("iframe");frame.title="Lista de întreținere — "+item.label;frame.src=item.links.preview;frame.allow="fullscreen";const viewer=document.getElementById("viewer");viewer.replaceChildren(frame);viewer.classList.add("ready");document.getElementById("pdf-open").href=item.links.open;document.getElementById("pdf-download").href=item.links.download;document.getElementById("pdf-actions").hidden=false;}
+if(lists.length){select.replaceChildren();lists.forEach((item,i)=>{const opt=document.createElement("option");opt.value=i;opt.textContent=item.label;select.append(opt);});select.disabled=false;select.addEventListener("change",showPDF);showPDF();}
+</script>
+</body></html>
