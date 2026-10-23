@@ -21,17 +21,17 @@ const SITE = {
     {
       title: "Carte de imobil",
       description: "Formular pentru actualizarea datelor din cartea imobilului.",
-      url: "", // ← LINK DRIVE PENTRU CARTEA DE IMOBIL
+      url: "https://docs.google.com/document/d/1prajylXqSEcdMfT-H8YVv4B8fioKeUtd/edit?usp=sharing&ouid=104574171398264366203&rtpof=true&sd=true", // ← LINK DRIVE PENTRU CARTEA DE IMOBIL
     },
     {
-      title: "Cereri și declarații",
+      title: "Declarație",
       description: "Formulare standard pentru solicitări către asociație.",
-      url: "", // ← LINK DRIVE PENTRU CERERI ȘI DECLARAȚII
+      url: "https://docs.google.com/document/d/1HCn8m-7HGmwClq4Vbr6ZyRRm-cwg9NCH/edit?usp=sharing&ouid=104574171398264366203&rtpof=true&sd=true", // ← LINK DRIVE PENTRU CERERI ȘI DECLARAȚII
     },
     {
-      title: "Documente ale asociației",
+      title: "Cerere înscriere",
       description: "Alte documente utile pentru proprietari și locatari.",
-      url: "", // ← LINK DRIVE PENTRU DOCUMENTELE ASOCIAȚIEI
+      url: "https://docs.google.com/document/d/1Fyv6wQqpqOpHjAIJzggzgW9-q9mAjYmv/edit?usp=sharing&ouid=104574171398264366203&rtpof=true&sd=true", // ← LINK DRIVE PENTRU DOCUMENTELE ASOCIAȚIEI
     },
   ],
 
