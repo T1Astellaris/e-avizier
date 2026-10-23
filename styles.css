@@ -546,8 +546,8 @@ footer {
 .brand-logo {
   display: block;
   width: 240px;
-  height: 110px;
-  object-fit: cover;
+  height: 150px;
+  object-fit: contain;
   max-width: 100%;
 }
 

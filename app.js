@@ -120,11 +120,13 @@ function renderMaintenance() {
 }
 
 function renderContact() {
+  const address = document.querySelector("[data-contact-address]");
+  if (address) address.textContent = SITE.contactAddress || "";
   const email = SITE.contactEmail.trim();
   if (!email) return;
   document.querySelectorAll("[data-contact-email]").forEach((link) => {
     link.href = `mailto:${email}`;
-    link.textContent = email;
+    link.textContent = link.hasAttribute("data-contact-button") ? "Trimite o sesizare ↗" : email;
     link.hidden = false;
   });
   document.querySelectorAll("[data-contact-pending]").forEach((node) => {

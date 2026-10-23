@@ -8,7 +8,8 @@ const SITE = {
   updatedAt: "23 octombrie 2026",
 
   // CONTACT — completați doar adresa confirmată a asociației.
-  contactEmail: "București, Bd. Ghencea, nr. 77",
+  contactEmail: "t1astellaris@gmail.com",
+  contactAddress: "București, Bd. Ghencea, nr. 77",
 
   // ANUNȚURI — cel mai recent se pune primul.
   // Exemplu: { title: "Titlu", text: "Detalii", date: "23 octombrie 2026", important: true }
@@ -42,8 +43,8 @@ const SITE = {
   // ============================================================
   maintenance: [
     {
-      label: "", // ← LUNA ȘI ANUL, de exemplu: Octombrie 2026
-      url: "", // ← LINK DRIVE CĂTRE PDF-UL LUNAR (nu folder)
+      label: "August 2026", // ← LUNA ȘI ANUL, de exemplu: Octombrie 2026
+      url: "https://drive.google.com/file/d/1VzzfR83S9X59jxw0XBbKl4zDbnx5aWjw/view?usp=drivesdk", // ← LINK DRIVE CĂTRE PDF-UL LUNAR (nu folder)
     },
   ],
 };
