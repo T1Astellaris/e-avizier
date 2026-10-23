@@ -8,7 +8,7 @@ const SITE = {
   updatedAt: "23 octombrie 2026",
 
   // CONTACT — completați doar adresa confirmată a asociației.
-  contactEmail: "",
+  contactEmail: "București, Bd. Ghencea, nr. 77",
 
   // ANUNȚURI — cel mai recent se pune primul.
   // Exemplu: { title: "Titlu", text: "Detalii", date: "23 octombrie 2026", important: true }
