@@ -64,3 +64,17 @@ node --check app.js
 ```
 
 Verificați și în browser linkurile, selectorul lunii și afișarea pe telefon. Fișierele sunt publice; nu introduceți parole sau chei în configurație.
+
+## Liste de întreținere pe blocuri
+
+În `maintenance-config.js`, `maintenanceBuildings` controlează opțiunile selectorului:
+T1A și T2A sunt active. Pentru T1B sau T2B, schimbați `enabled: false` în `enabled: true`.
+
+În `config.js`, adăugați blocul la fiecare intrare nouă din `maintenance`. Listele existente fără `building` sunt afișate la T1A:
+
+```js
+{ building: "T2A", label: "Septembrie 2026", url: "LINK_HTTPS_CĂTRE_PDF" },
+```
+
+Puneți cele mai recente liste primele pentru fiecare bloc. Câmpul `url` gol nu publică un document.
+La schimbarea blocului apar doar lunile lui; un bloc fără PDF afișează un mesaj, fără a păstra lista altui bloc.

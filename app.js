@@ -87,36 +87,87 @@ function renderDocuments() {
 }
 
 function renderMaintenance() {
-  const lists = SITE.maintenance
-    .map((item) => ({ ...item, links: fileLinks(item.url) }))
-    .filter((item) => item.links);
-  const select = document.getElementById("month");
-  if (!lists.length) return;
+  const buildings = SITE.maintenanceBuildings.filter((item) => item.enabled);
+  const buildingSelect = document.getElementById("building");
+  const monthSelect = document.getElementById("month");
+  const viewer = document.getElementById("viewer");
+  const actions = document.getElementById("pdf-actions");
+  const openLink = document.getElementById("pdf-open");
+  const downloadLink = document.getElementById("pdf-download");
+  let lists = [];
 
-  function showPDF() {
-    const item = lists[Number(select.value)];
-    if (!item) return;
-    const frame = element("iframe");
-    frame.title = `Lista de întreținere — ${item.label}`;
-    frame.src = item.links.preview;
-    frame.allow = "fullscreen";
-    const viewer = document.getElementById("viewer");
-    viewer.replaceChildren(frame);
-    viewer.classList.add("ready");
-    document.getElementById("pdf-open").href = item.links.open;
-    document.getElementById("pdf-download").href = item.links.download;
-    document.getElementById("pdf-actions").hidden = false;
+  function showEmptyState() {
+    actions.hidden = true;
+    openLink.removeAttribute("href");
+    downloadLink.removeAttribute("href");
+    viewer.classList.remove("ready");
+    const empty = element("div", "empty");
+    empty.append(
+      element("div", "file-icon", "PDF"),
+      element("h3", "", "Lista lunară va apărea aici"),
+      element("p", "", buildings.length
+        ? `Momentan nu este publicată nicio listă pentru ${buildingSelect.value}.`
+        : "Momentan nu este publicată nicio listă de întreținere."),
+    );
+    viewer.replaceChildren(empty);
   }
 
-  select.replaceChildren();
-  lists.forEach((item, index) => {
-    const option = element("option", "", item.label);
-    option.value = index;
-    select.append(option);
+  function showPDF() {
+    const item = lists[Number(monthSelect.value)];
+    if (!item) return;
+    const frame = element("iframe");
+    frame.title = `Lista de întreținere — ${buildingSelect.value} — ${item.label}`;
+    frame.src = item.links.preview;
+    frame.allow = "fullscreen";
+    viewer.replaceChildren(frame);
+    viewer.classList.add("ready");
+    openLink.href = item.links.open;
+    downloadLink.href = item.links.download;
+    actions.hidden = false;
+  }
+
+  // Schimbarea blocului reîncarcă lunile și elimină PDF-ul blocului anterior.
+  function showBuilding() {
+    lists = SITE.maintenance
+      .filter((item) => (item.building || SITE.maintenanceDefaultBuilding) === buildingSelect.value)
+      .map((item) => ({ ...item, links: fileLinks(item.url) }))
+      .filter((item) => item.links);
+    monthSelect.replaceChildren();
+    monthSelect.disabled = !lists.length;
+
+    if (!lists.length) {
+      monthSelect.append(element("option", "", "Nicio listă publicată încă"));
+      showEmptyState();
+      return;
+    }
+
+    lists.forEach((item, index) => {
+      const option = element("option", "", item.label);
+      option.value = index;
+      monthSelect.append(option);
+    });
+    monthSelect.value = "0";
+    showPDF();
+  }
+
+  buildingSelect.replaceChildren();
+  buildings.forEach((item) => {
+    const option = element("option", "", item.id);
+    option.value = item.id;
+    buildingSelect.append(option);
   });
-  select.disabled = false;
-  select.addEventListener("change", showPDF);
-  showPDF();
+  buildingSelect.disabled = !buildings.length;
+  monthSelect.addEventListener("change", showPDF);
+  buildingSelect.addEventListener("change", showBuilding);
+
+  if (buildings.length) {
+    buildingSelect.value = buildings[0].id;
+    showBuilding();
+  } else {
+    monthSelect.replaceChildren(element("option", "", "Nicio listă publicată încă"));
+    monthSelect.disabled = true;
+    showEmptyState();
+  }
 }
 
 function renderContact() {
